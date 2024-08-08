@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form  method="post">
+        <label for="id">ingresar id</label>
+        <input type="number" name="id" id="id" th:value="${persona.id}">
+
+        <label for="nombre">ingresar nombre</label>
+        <input type="text" name="nombre" id="nombre" th:value="${persona.nombre}">
+
+        <label for="apellido">ingresar apellido</label>
+        <input type="text" name="apellido" id="apellido" th:value="${persona.apellido}">
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div th:if="${persona.nombre != null}">
+        <h2>Datos del usuario</h2>
+        <ul>
+            <li th:text="${persona.id}"></li>
+            <li th:text="${persona.nombre}"></li>
+            <li th:text="${persona.apellido}"></li>
+        </ul>
+    </div>
+</body>
+</html>
